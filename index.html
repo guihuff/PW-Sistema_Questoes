@@ -46,24 +46,42 @@
 					</div>
 				</div>
 				<div id="container-questoes" class="col-lg-10 col-md-9 col-sm-8 col-12 p-0">
-					<div class="h-100 p-4 p-md-7">
+					<div class="h-100 p-4 p-md-7 ">
 						<div class="h-100 w-100 bg-light rounded p-4 shadow-lg shadow-sm-xl" id="board-questoes">
-							<form>
-								<div class="row d-flex justify-content-start border py-3 px-1 rounded">
-									<h5 class="font-monospace text-secondary">Dados Pessoais</h5>
-									<div class="col-12 col-lg-4 col-md-6 m-2">
-										<input id="name" type="text" class="form-control" placeholder="Nome" />
-										<label for="name" class="text-secondary" style="font-size: 0.8rem;">-- Nome</label>
+							<form id="form-questions">
+								<div class="w-100 h-100 d-flex flex-column justify-content-between">
+									<div class="row d-flex justify-content-start border py-3 px-1 rounded mx-0 mb-4">
+										<h5 class="font-monospace text-secondary pl-1">Dados Pessoais</h5>
+										<div class="col-12 col-lg-4 col-md-6 m-2">
+											<input id="name" type="text" class="form-control" placeholder="Nome" data-bs-toggle="tooltip" data-bs-placement="top" title="Primeiro Nome"/>
+											<label for="name" class="text-secondary" style="font-size: 0.8rem;">-- Nome</label>
+										</div>
+										<div class="col-12 col-lg-4 col-md-6 m-2">
+											<input id="lastname" type="text" class="form-control" placeholder="Sobrenome" data-bs-toggle="tooltip" data-bs-placement="top" title="Ultimo Nome"/>
+											<label for="lastname" class="text-secondary" style="font-size: 0.8rem;">-- Sobrenome</label>
+										</div>
+										<div class="col-12 col-lg-6 col-md-8 m-2">
+											<input id="email" type="email" class="form-control" placeholder="Email" data-bs-toggle="tooltip" data-bs-placement="top" title="Email: exemplo@email.com" />
+											<label for="email" class="text-secondary" style="font-size: 0.8rem;">-- Email</label>
+										</div>
+										
 									</div>
-									<div class="col-12 col-lg-4 col-md-6 m-2">
-										<input id="lastname" type="text" class="form-control" placeholder="Sobrenome" />
-										<label for="lastname" class="text-secondary" style="font-size: 0.8rem;">-- Sobrenome</label>
+									<div class="border py-3 px-1 rounded">
+										<h5 class="font-monospace text-secondary pl-1">Instuções</h5>
+										<ul class="font-monospace text-secondary">
+											<li>Preencha seu nome, sobrenome e email corretamente</li>
+											<li>São 10 questõs que multipla escolha</li>
+											<li>Cada questão só tem uma resposta correta</li>
+											<li>Só é possivel selecionar 1 opção por questão</li>
+											<li>Navegue pelas questões pelos botões de proximo (<i class="far fa-arrow-alt-circle-right"></i>) ou anterior (<i class="far fa-arrow-alt-circle-left"></i>)</li>
+											<li>Cada questão vale 1 ponto. Após enviar não é possivel sua nota será computada e mostrada na sua tela</li>
+										</ul>
 									</div>
-									<div class="col-12 col-lg-6 col-md-8 m-2">
-										<input id="email" type="email" class="form-control" placeholder="Email" />
-										<label for="email" class="text-secondary" style="font-size: 0.8rem;">-- Email</label>
+									<div class="w-100 d-flex justify-content-center align-items-center position-bottom">
+										<button class="btn btn-outline-success border-0 mx-4"><i class="far fa-arrow-alt-circle-left fa-2x"></i></button>
+										<button class="btn btn-outline-success border-0  mx-4"><i class="far fa-arrow-alt-circle-right fa-2x "></i></button>
 									</div>
-								</div>
+								</div>	
 							</form>
 						</div>
 					</div>
