@@ -28,6 +28,17 @@ body {
 .p-7 {
 	padding: 4rem !important;
 }
+input:focus {
+    box-shadow: 0 0 0.8em rgba(51,155,102,0.5) !important;
+	-webkit-box-shadow: 0 0 0.8em rgba(51,155,102,0.5) !important;
+	-moz-box-shadow: 0 0 0.8em rgba(51,155,102,0.5) !important;
+    outline: 0 !important;
+	border: 0 !important;
+}
+#board-questoes {
+	max-height: 77vh;
+	overflow-y: auto;
+}
 /*/ Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) { 
 	#menu-lateral {
