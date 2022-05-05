@@ -12,7 +12,6 @@ body {
 	font-family: sans-serif;
 	background: -webkit-linear-gradient(left, #1b8b4d, #b3ffeb);
 	background: -moz-linear-gradient(left, #1b8b4d, #b3ffeb);
-	background: -ms-linear-gradient(left, #1b8b4d, #b3ffeb);
 	background: -o-linear-gradient(left, #1b8b4d, #b3ffeb);
 	background: linear-gradient(to right, #1b8b4d, #b3ffeb);
 	background-repeat: no-repeat;
@@ -42,13 +41,16 @@ input:focus {
 #form-questions {
 	height: 100%;
 }
-
+.disable {
+	display: none !important;
+	visibility: 0;
+}
 /*/ Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) { 
 	#menu-lateral {
 		height: calc(100vh - 61px);
 	}
-	#container-questoes {
+	#container-questions {
 		height: calc(100vh - 61px);
 	}
 	.shadow-sm-xl {
