@@ -53,15 +53,15 @@
 									<div class="row d-flex justify-content-start border py-3 px-1 rounded mx-0 mb-4">
 										<h5 class="font-monospace text-secondary pl-1">Dados Pessoais</h5>
 										<div class="col-12 col-lg-4 col-md-6 m-2">
-											<input id="name" type="text" class="form-control" placeholder="Nome" data-bs-toggle="tooltip" data-bs-placement="top" title="Primeiro Nome"/>
+											<input id="name" type="text" class="form-control" placeholder="Nome" data-bs-toggle="tooltip" data-bs-placement="top" title="Primeiro Nome" required/>
 											<label for="name" class="text-secondary" style="font-size: 0.8rem;">-- Nome</label>
 										</div>
 										<div class="col-12 col-lg-4 col-md-6 m-2">
-											<input id="lastname" type="text" class="form-control" placeholder="Sobrenome" data-bs-toggle="tooltip" data-bs-placement="top" title="Ultimo Nome"/>
+											<input id="lastname" type="text" class="form-control" placeholder="Sobrenome" data-bs-toggle="tooltip" data-bs-placement="top" title="Ultimo Nome" required/>
 											<label for="lastname" class="text-secondary" style="font-size: 0.8rem;">-- Sobrenome</label>
 										</div>
 										<div class="col-12 col-lg-6 col-md-8 m-2">
-											<input id="email" type="email" class="form-control" placeholder="Email" data-bs-toggle="tooltip" data-bs-placement="top" title="Email: exemplo@email.com" />
+											<input id="email" type="email" class="form-control" placeholder="Email" data-bs-toggle="tooltip" data-bs-placement="top" title="Email: exemplo@email.com" required/>
 											<label for="email" class="text-secondary" style="font-size: 0.8rem;">-- Email</label>
 										</div>
 									</div>
@@ -73,7 +73,7 @@
 											<li>Cada questão só tem uma resposta correta</li>
 											<li>Só é possivel selecionar 1 opção por questão</li>
 											<li>Navegue pelas questões pelos botões de proximo (<i class="far fa-arrow-alt-circle-right"></i>) ou anterior (<i class="far fa-arrow-alt-circle-left"></i>)</li>
-											<li>Cada questão vale 1 ponto. Após enviar não é possivel sua nota será computada e mostrada na sua tela</li>
+											<li>Cada questão vale 1 ponto. Após clicar em enviar (<i class="fa-regular fa-circle-check"></i>) não é possivel voltar, sua nota será computada e mostrada na sua tela</li>
 										</ul>
 									</div>
 									<div class="w-100 d-flex justify-content-center align-items-center position-bottom">
@@ -82,8 +82,7 @@
 								</div> 
 
 								<div id="1" class="page-question w-100 h-100 d-flex flex-column justify-content-between disable"><!--Inicio Pagina Questão-->
-									<div class="row border py-3 px-1 rounded mx-0 mb-4">
-									</div>
+									
 
 									<div class="w-100 d-flex justify-content-center align-items-center position-bottom">
 										<button class="btn btn-outline-success border-0 mx-4 btn-questions" onclick="anteQuestion()"><i class="far fa-arrow-alt-circle-left fa-2x"></i></button>
@@ -150,11 +149,9 @@
 
 									<div class="w-100 d-flex justify-content-center align-items-center position-bottom">
 										<button class="btn btn-outline-success border-0 mx-4 btn-questions" onclick="anteQuestion()"><i class="far fa-arrow-alt-circle-left fa-2x"></i></button>
-										<button class="btn btn-outline-success border-0 mx-4 btn-questions" onclick="proxQuestion()"><i class="far fa-arrow-alt-circle-right fa-2x"></i></button>
+										<button class="btn btn-outline-success border-0 mx-4 btn-questions" id="finishQuestion"><i class="fa-regular fa-circle-check fa-2x"></i></button>
 									</div>
 								</div><!--Fim Pagina Questão-->
-
-									
 							</form>
 						</div>
 					</div>
