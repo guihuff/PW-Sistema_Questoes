@@ -8,6 +8,7 @@ class AlunoResposta {
     sobrenome;
     email;
     respostas;
+    resultado;
 }
 
 const questao1 = new Questao();
@@ -26,39 +27,39 @@ questao3.respostas = ["=", "!=", "==", "==="];
 questao3.respostacorreta = "===";
 
 const questao4 = new Questao();
-questao4.text = "Em JavaScript, qual desses sinais abaixo representa a comparação de tipo (type) e conteúdo:";
-questao4.respostas = ["=", "!=", "==", "==="];
-questao4.respostacorreta = "===";
+questao4.text = "Em JavaScript, o que significa NaN:";
+questao4.respostas = ["Not a Name", "Not a Number", "Not a Night", "Not a Newsletter"];
+questao4.respostacorreta = "Not a Number";
 
 const questao5 = new Questao();
-questao5.text = "Em JavaScript, qual desses sinais abaixo representa a comparação de tipo (type) e conteúdo:";
-questao5.respostas = ["=", "!=", "==", "==="];
-questao5.respostacorreta = "===";
+questao5.text = "Como é declarado que um documento é do tipo HTML5?";
+questao5.respostas = ["!DOCTYPE html", "body", "!DOCTYPE xml", "NaN"];
+questao5.respostacorreta = "!DOCTYPE html";
 
 const questao6 = new Questao();
-questao6.text = "Em JavaScript, qual desses sinais abaixo representa a comparação de tipo (type) e conteúdo:";
-questao6.respostas = ["=", "!=", "==", "==="];
-questao6.respostacorreta = "===";
+questao6.text = "Qual dos simbolos abaixo representa o seletor universal no css? ou seja esse seletor irá referenciar todos os nós:";
+questao6.respostas = ["*", "-", "#", ":::"];
+questao6.respostacorreta = "*";
 
 const questao7 = new Questao();
-questao7.text = "Em JavaScript, qual desses sinais abaixo representa a comparação de tipo (type) e conteúdo:";
-questao7.respostas = ["=", "!=", "==", "==="];
-questao7.respostacorreta = "===";
+questao7.text = "Assinale a resposta que se refere ao tipo de display: flex?";
+questao7.respostas = ["O Flexible Box Module, geralmente chamado de flexbox, foi projetado tanto como um modelo de layout unidimensional quanto como um método capaz de organizar espacialmente os elementos em uma interface", "CSS Grid Layout introduz um sistema bi-dimensional de grid (literalmente 'grades') para CSS. Grids podem ser usados para o design de layouts de grandes seções de uma webpage, assim como de pequenos elementos de interface.", "Mudando coordenadas no espaço da tela o CSS transforms permite que a posição do conteúdo afetado seja alterada sem afetar o fluxo de informação da página.", "A propriedade especifica o tipo de método de posicionamento usado para um elemento (estático, relativo, fixo, absoluto ou fixo)."];
+questao7.respostacorreta = "O Flexible Box Module, geralmente chamado de flexbox, foi projetado tanto como um modelo de layout unidimensional quanto como um método capaz de organizar espacialmente os elementos em uma interface", "CSS Grid Layout introduz um sistema bi-dimensional de grid (literalmente 'grades') para CSS. Grids podem ser usados para o design de layouts de grandes seções de uma webpage, assim como de pequenos elementos de interface.";
 
 const questao8 = new Questao();
-questao8.text = "Em JavaScript, qual desses sinais abaixo representa a comparação de tipo (type) e conteúdo:";
-questao8.respostas = ["=", "!=", "==", "==="];
-questao8.respostacorreta = "===";
+questao8.text = "Vários elementos HTML podem compartilhar a mesma __________. Seletor de _________ é representado por um ponto “.”, e tem como alvo todos os elementos que possuem um determinado valor no atributo ____________. Selecione a opção que preenche as lacunas corretamente";
+questao8.respostas = ["classe, id, class", "id, name, class", "name, id, id", "classe, classe, class"];
+questao8.respostacorreta = "classe, classe, class";
 
 const questao9 = new Questao();
-questao9.text = "Em JavaScript, qual desses sinais abaixo representa a comparação de tipo (type) e conteúdo:";
-questao9.respostas = ["=", "!=", "==", "==="];
-questao9.respostacorreta = "===";
+questao9.text = "O atributo global ___ define um identificador exclusivo. Seletor _______ é representado pelo sinal “#”, e tem como alvo todos os elementos que possuem um determinado valor no atributo _________. Selecione a opção que preenche as lacunas corretamente";
+questao9.respostas = ["id, id, id", "class, class, id", "name, name, data", "class, class, class"];
+questao9.respostacorreta = "id, id, id";
 
 const questao10 = new Questao();
-questao10.text = "Em JavaScript, qual desses sinais abaixo representa a comparação de tipo (type) e conteúdo:";
-questao10.respostas = ["=", "!=", "==", "==="];
-questao10.respostacorreta = "===";
+questao10.text = "Qual das resposta abaixo não é um evento valido em JavaScript?";
+questao10.respostas = ["onclick", "onload", "onprint", "onmouseover"];
+questao10.respostacorreta = "onprint";
 
 const listQuestions = [questao1, questao2, questao3, questao4, questao5, questao6, questao7, questao8, questao9, questao10];
 const aluno = new AlunoResposta();
@@ -79,10 +80,13 @@ $(document).ready(() => {
     $('#finishQuestion').click(() => {
         let check = false;
         check = checkData();
-        check = checkQuestions();
+        if (check) { check = checkQuestions(); }
 
         if (check) {
-            console.log(aluno);
+            resultQuestion();
+
+            $('#board-questoes').toggleClass('disable');
+            $('#board-resposta').toggleClass('disable');
         }
     });
 });
@@ -233,28 +237,22 @@ const checkQuestions = () => {
         return false;
     }
     aluno.respostas = [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10];
- 
+    
     return true;
 }
-/*
-<div class="row border py-3 px-1 rounded mx-0 mb-4">
-    <h5 class="font-monospace text-secondary pl-1 col-12">Qustão Numero 1</h5>
-    <p>Descrição da Questão. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut est vehicula purus auctor sagittis interdum et ligula. Aenean sollicitudin odio sed vulputate ornare. Sed sed vulputate mauris, in fringilla felis. Cras cursus eget tortor ac pellentesque. Sed ullamcorper tellus vel dignissim blandit.</p>
-    <div class="form-check col-12">
-        <input type="radio" id="html" class="form-check-input" name="question-1" value="HTML" >
-        <label for="html" class="form-check-label">HTML</label>
-    </div>
-    <div class="form-check col-12">
-        <input type="radio" id="css" class="form-check-input" name="question-1" value="CSS">
-        <label for="css" class="form-check-label">CSS</label>
-    </div>
-    <div class="form-check col-12">
-        <input type="radio" id="javascript" class="form-check-input" name="question-1" value="JavaScript">
-        <label for="javascript" class="form-check-label">JavaScript</label>
-    </div>
-    <div class="form-check col-12">
-        <input type="radio" id="php" class="form-check-input" name="question-1" value="PHP">
-        <label for="php" class="form-check-label">PHP</label>
-    </div>
-</div>
-*/
+
+const resultQuestion = () => {
+    let cont = 0;
+    for ( i in aluno.respostas ){
+        if ( aluno.respostas[i] === listQuestions[i].respostacorreta ){
+            cont++;
+        }
+    }
+    aluno.resultado = cont;
+    let divContainer = $('<div></div>').addClass('row border py-3 px-1 rounded');
+    let pResponse = $('<p></p>').addClass('text-secondary pl-1').append(`${aluno.email}`);
+    let h5Response = $('<h5></h5>').addClass('font-monospace text-secondary pl-1').append(`${aluno.nome} ${aluno.sobrenome}`);
+    let h4Response = $('<h5></h5>').addClass('font-monospace text-secondary pl-1').append(`ACERTOU: ${aluno.resultado}`);
+    divContainer.append(h5Response).append(pResponse).append('<hr>').append(h4Response);
+    $('#cont-resposta').prepend(divContainer);
+}

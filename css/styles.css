@@ -34,9 +34,10 @@ input:focus {
     outline: 0 !important;
 	border: 0 !important;
 }
-#board-questoes {
+#board-questoes, #board-resposta {
 	max-height: 77vh;
 	overflow-y: auto;
+	min-height: 500px;
 }
 #form-questions {
 	height: 100%;
@@ -61,7 +62,9 @@ input:focus {
 	.navbar button {
 		margin-right: 50px !important;
 	}
-	
+	#board-questoes, #board-resposta {
+		min-height: 400px;
+	}
 }
 
 /*/ Medium devices (tablets, 768px and up)*/
