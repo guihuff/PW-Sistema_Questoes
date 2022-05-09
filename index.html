@@ -21,7 +21,7 @@
 		<header class="">
 			<nav class="navbar navbar-light bg-light shadow">
 				<div class="row w-100">
-					<a class="col-lg-2 col-md-3 col-sm-4 col-6 navbar-brand d-flex justify-content-center m-0" href="#">
+					<a class="col-lg-2 col-md-3 col-sm-4 col-6 navbar-brand d-flex justify-content-center m-0" href="index.html">
 						<img src="img/logo.png" alt="" width="35" height="35">
 					</a> 
 					<div class="col-lg-10 col-md-9 col-sm-8 col-6 d-flex justify-content-sm-end justify-content-center">
@@ -37,6 +37,31 @@
 				<div class="col-lg-2 col-md-3 col-sm-4 col-12 bg-light p-0 shadow-sm-xl" id="menu-lateral">
 					<div class="p-4 d-flex flex-column justify-content-between height-100">
 					    <h4 class="text-center font-monospace">Questões</h4>
+					    <nav class="">
+					    	<ul class="navbar-nav text-secondary"> 
+					    		<li class="nav-item">
+					    			<h6 class="">Disciplinas:</h6>
+					    		</li>
+					    		<li class="nav-item">
+					    			<a class="nav-link text-secondary" href="index.html?disciplina=qs">Qualidade de Software</a>
+					    		</li>
+					    		<li class="nav-item">
+					    			<a class="nav-link text-secondary" href="index.html?disciplina=lpw">Programação Web</a>
+					    		</li>
+					    		<li class="nav-item">
+					    			<a class="nav-link text-secondary" href="index.html?disciplina=sia">Sistemas Inteligentes Aplicados</a>
+					    		</li>
+					    		<li class="nav-item">
+					    			<a class="nav-link text-secondary" href="index.html?disciplina=redes">Redes 2</a>
+					    		</li>
+					    		<li class="nav-item">
+					    			<a class="nav-link text-secondary" href="index.html?disciplina=lso">Laboratório de Sistemas Operacionais</a>
+					    		</li>
+					    		<li class="nav-item">
+					    			<a class="nav-link text-secondary" href="index.html?disciplina=git">Gestão de Inovação</a>
+					    		</li>
+					    	</ul>
+					    </nav>
 					    <footer class="d-none d-sm-block">
 					    
 					    	<p class="font-monospace">&copy; Nenhum direito reservado</p>
@@ -50,35 +75,11 @@
 						<div class="h-100 w-100 bg-light rounded p-4 shadow-lg shadow-sm-xl" id="board-questoes">
 							<form id="form-questions" class="">
 								<div id="0" class="page-question w-100 h-100 d-flex flex-column justify-content-between"> <!--Inicio Pagina Questão-->
-									<div class="row d-flex justify-content-start border py-3 px-1 rounded mx-0 mb-4">
-										<h5 class="font-monospace text-secondary pl-1">Dados Pessoais</h5>
-										<div class="col-12 col-lg-4 col-md-6 m-2">
-											<input id="name" type="text" class="form-control" placeholder="Nome" data-bs-toggle="tooltip" data-bs-placement="top" title="Primeiro Nome" required/>
-											<label for="name" class="text-secondary" style="font-size: 0.8rem;">-- Nome</label>
-										</div>
-										<div class="col-12 col-lg-4 col-md-6 m-2">
-											<input id="lastname" type="text" class="form-control" placeholder="Sobrenome" data-bs-toggle="tooltip" data-bs-placement="top" title="Ultimo Nome" required/>
-											<label for="lastname" class="text-secondary" style="font-size: 0.8rem;">-- Sobrenome</label>
-										</div>
-										<div class="col-12 col-lg-6 col-md-8 m-2">
-											<input id="email" type="email" class="form-control" placeholder="Email" data-bs-toggle="tooltip" data-bs-placement="top" title="Email: exemplo@email.com" required/>
-											<label for="email" class="text-secondary" style="font-size: 0.8rem;">-- Email</label>
-										</div>
-									</div>
-									<div class="border py-3 px-1 rounded mb-4">
-										<h5 class="font-monospace text-secondary pl-1">Instuções</h5>
-										<ul class="font-monospace text-secondary">
-											<li>Preencha seu nome, sobrenome e email corretamente</li>
-											<li>São 10 questõs que multipla escolha</li>
-											<li>Cada questão só tem uma resposta correta</li>
-											<li>Só é possivel selecionar 1 opção por questão</li>
-											<li>Navegue pelas questões pelos botões de proximo (<i class="far fa-arrow-alt-circle-right"></i>) ou anterior (<i class="far fa-arrow-alt-circle-left"></i>)</li>
-											<li>Cada questão vale 1 ponto. Após clicar em enviar (<i class="fa-regular fa-circle-check"></i>) não é possivel voltar, sua nota será computada e mostrada na sua tela</li>
-										</ul>
-									</div>
-									<div class="w-100 d-flex justify-content-center align-items-center position-bottom">
-										<button class="btn btn-outline-success border-0 mx-4 btn-questions" onclick="proxQuestion()"><i class="far fa-arrow-alt-circle-right fa-2x "></i></button>
-									</div>
+
+									
+									<div id="div-btn-init" class="w-100 d-flex justify-content-center align-items-center position-bottom disable">
+								        <button class="btn btn-outline-success border-0 mx-4 btn-questions" onclick="proxQuestion()"><i class="far fa-arrow-alt-circle-right fa-2x "></i></button>
+								    </div>
 								</div> 
 
 								<div id="1" class="page-question w-100 h-100 d-flex flex-column justify-content-between disable"><!--Inicio Pagina Questão-->
